@@ -5,8 +5,8 @@ import (
   "fmt"
   "os"
 
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+  "github.com/labstack/echo"
+  "github.com/labstack/echo/middleware"
 )
 
 type PostData struct {
@@ -56,10 +56,10 @@ func main () {
   e.Use(middleware.CORS())
   e.GET("/", ConsoleGetter)
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "5500"
-		fmt.Printf("Using default port: %s", port)
-	}
+  port := os.Getenv("PORT")
+  if port == "" {
+    port = "5500"
+    fmt.Printf("Using default port: %s", port)
+  }
   e.Start(fmt.Sprintf(":%s", port))
 }
