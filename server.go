@@ -55,6 +55,7 @@ func main () {
   e := echo.New()
   e.Use(middleware.CORS())
   e.GET("/", ConsoleGetter)
+  e.POST("/", ConsoleGetter)
 
   port := os.Getenv("PORT")
   if port == "" {
